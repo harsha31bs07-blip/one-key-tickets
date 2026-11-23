@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orion Talkies | Fictional demo cinema</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="masthead">Orion Talkies <span>(fictional demo cinema)</span></header>
+  <main>
+    <div class="show">
+      <div>
+        <p class="screen-name">Screen 2</p>
+        <h1>The Paper Moon</h1>
+      </div>
+      <p class="show-time"><time datetime="19:30">7:30 PM</time></p>
+    </div>
+    <section aria-label="Seating">
+      <h2>Choose your seats</h2>
+      <ul class="legend" aria-label="Seat legend">
+        <li><span class="key available" aria-hidden="true">○</span>Available</li>
+        <li><span class="key sold" aria-hidden="true">×</span>Sold or held</li>
+        <li><span class="key selected" aria-hidden="true">✓</span>Selected</li>
+        <li><span class="key space" aria-hidden="true">W</span>Wheelchair space</li>
+        <li><span class="key companion" aria-hidden="true">C</span>Companion seat</li>
+      </ul>
+      <div class="map-scroll">
+        <div class="screen-line">Screen</div>
+        <section id="seat-map" aria-label="Seat map" data-revision="" data-currency="INR" data-booking="idle"></section>
+      </div>
+      <div class="checkout">
+        <p id="booking-status" role="status">Waiting for live availability.</p>
+        <p class="total">Total <strong id="total">₹0</strong></p>
+        <button id="continue" class="continue" type="button" disabled>Continue</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

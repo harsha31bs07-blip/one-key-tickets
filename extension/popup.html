@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>One-Key Tickets</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="dist/popup.js" defer></script>
+</head>
+<body>
+  <h1>One-Key Tickets</h1>
+  <form id="settings">
+    <div class="fields">
+      <label>Dwell (ms) <input id="dwell" type="number" min="500" max="4000" step="1" required></label>
+      <label>Switch key <input id="switch-key" type="text" value="Space" required></label>
+      <label class="check"><input id="speech" type="checkbox"> Speak scan options</label>
+      <label class="check"><input id="adaptive" type="checkbox"> Offer more time after two corrections</label>
+    </div>
+    <button type="submit">Save settings</button>
+  </form>
+  <section aria-labelledby="comparison-title">
+    <h2 id="comparison-title">Generic scanning, for comparison</h2>
+    <form id="comparison">
+      <div class="fields">
+        <label>Mode <select id="mode"><option value="linear">Linear</option><option value="row-column">Row-column</option></select></label>
+        <label>Target seats <input id="targets" type="text" placeholder="D2 D3" required></label>
+      </div>
+      <button type="submit">Start comparison</button>
+    </form>
+  </section>
+  <p id="status" role="status"></p>
+  <section aria-labelledby="results-title">
+    <div class="results-heading">
+      <h2 id="results-title">Results</h2>
+      <button id="reset-results" type="button">Reset results</button>
+    </div>
+    <div id="results"></div>
+  </section>
+</body>
+</html>

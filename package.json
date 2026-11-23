@@ -1,0 +1,25 @@
+{
+  "name": "one-key-tickets",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc",
+    "test": "node --test --test-isolation=none test/unit/*.test.ts",
+    "e2e": "npm run build && playwright test",
+    "compare": "node scripts/compare.ts",
+    "start": "node src/server/index.ts",
+    "rival": "node scripts/rival.ts",
+    "reset": "node scripts/reset.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2"
+  }
+}

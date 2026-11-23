@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "One-Key Tickets",
+  "version": "0.1.0",
+  "description": "Book cinema seats on a demo map with one switch.",
+  "permissions": ["storage"],
+  "action": { "default_title": "One-Key Tickets", "default_popup": "popup.html" },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://127.0.0.1:5101/*", "http://127.0.0.1:5102/*",
+        "http://localhost:5101/*", "http://localhost:5102/*"
+      ],
+      "js": ["dist/content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

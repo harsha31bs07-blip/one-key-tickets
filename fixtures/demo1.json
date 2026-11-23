@@ -1,0 +1,29 @@
+{
+  "scenario": "demo1",
+  "venue": "Orion Talkies",
+  "screen": "Screen 2",
+  "fictional": true,
+  "film": "The Paper Moon",
+  "showTime": "7:30 PM",
+  "blocks": [[1, 4], [5, 10], [11, 14]],
+  "zones": {
+    "front": { "rows": ["A", "B", "C"], "pricePaise": 15000 },
+    "middle": { "rows": ["D", "E", "F"], "pricePaise": 22000 },
+    "back": { "rows": ["G", "H"], "pricePaise": 32000 }
+  },
+  "wheelchairPairs": [
+    { "space": "C1", "companion": "C2" },
+    { "space": "E13", "companion": "E14" },
+    { "space": "H5", "companion": "H6" }
+  ],
+  "sold": [
+    "A1", "A3", "A6", "A9", "A11", "A14",
+    "B2", "B4", "B5", "B8", "B10", "B13",
+    "C3", "C5", "C7", "C10", "C12", "C14",
+    "D1", "D4", "D7", "D8", "D10", "D13",
+    "E2", "E3", "E6", "E8", "E9", "E11",
+    "F2", "F5", "F6", "F9", "F11", "F14",
+    "G1", "G4", "G5", "G8", "G10", "G14",
+    "H2", "H4", "H7", "H9", "H11", "H13"
+  ]
+}
