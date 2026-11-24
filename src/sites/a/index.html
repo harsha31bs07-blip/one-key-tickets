@@ -8,14 +8,24 @@
   <script type="module" src="/app.js"></script>
 </head>
 <body>
-  <header class="masthead">Orion Talkies <span>(fictional demo cinema)</span></header>
+  <header class="masthead">
+    <span class="logo" aria-hidden="true"></span><strong>Orion Talkies</strong>
+    <nav class="nav" aria-hidden="true"><span>Movies</span><span>Events</span><span>Offers</span></nav>
+    <span class="city" aria-hidden="true">Bengaluru</span>
+    <span class="demo-tag">Fictional demo cinema</span>
+  </header>
   <main>
     <div class="show">
-      <div>
-        <p class="screen-name">Screen 2</p>
+      <div class="poster" aria-hidden="true"><span>The Paper Moon</span></div>
+      <div class="show-info">
+        <p class="screen-name">Orion Talkies, Indiranagar · Screen 2</p>
         <h1>The Paper Moon</h1>
+        <p class="meta">U/A · 2h 08m · English · Drama</p>
       </div>
-      <p class="show-time"><time datetime="19:30">7:30 PM</time></p>
+      <div class="show-when">
+        <p class="show-date">Tue, 24 Nov</p>
+        <p class="show-time"><time datetime="19:30">7:30 PM</time></p>
+      </div>
     </div>
     <section aria-label="Seating">
       <h2>Choose your seats</h2>
@@ -32,6 +42,7 @@
       </div>
       <div class="checkout">
         <p id="booking-status" role="status">Waiting for live availability.</p>
+        <p class="picked">Seats <strong id="selected-seats">None yet</strong></p>
         <p class="total">Total <strong id="total">₹0</strong></p>
         <button id="continue" class="continue" type="button" disabled>Continue</button>
       </div>

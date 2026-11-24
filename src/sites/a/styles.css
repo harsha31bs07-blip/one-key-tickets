@@ -29,11 +29,31 @@ a { color: var(--brand); }
   letter-spacing: .01em;
   white-space: nowrap;
 }
-.masthead span { color: #b9b0a2; font-size: .85rem; font-weight: 500; }
-main { max-width: 920px; margin: 0 auto; padding: 16px 20px 24px; }
+.masthead { align-items: center; gap: 14px; }
+.logo { width: 22px; height: 22px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #f0c27a, var(--brand) 70%); flex: none; }
+.nav { display: flex; gap: 18px; margin-left: 18px; color: #d9d1c4; font-size: .9rem; font-weight: 500; }
+.city { margin-left: auto; padding: 3px 10px; border: 1px solid #4a443b; border-radius: 999px; color: #d9d1c4; font-size: .82rem; font-weight: 500; }
+.demo-tag { padding: 3px 9px; border-radius: 999px; background: #3a342c; color: #cfc6b7; font-size: .72rem; font-weight: 600; letter-spacing: .02em; }
+.masthead > .demo-tag:nth-child(2) { margin-left: auto; }
+.poster {
+  display: grid; place-items: end start; width: 64px; height: 92px; flex: none; padding: 6px;
+  border-radius: 8px; background: radial-gradient(circle at 70% 28%, #f3e3b5 0 14%, transparent 15%), linear-gradient(160deg, #2c3a4a, #11161d 70%);
+  color: #f3e3b5; font: 800 .56rem/1.1 "Segoe UI", sans-serif; text-transform: uppercase; letter-spacing: .06em;
+  box-shadow: 0 6px 14px #23201b30;
+}
+.show-info { flex: 1; }
+.meta { margin: 4px 0 0; color: var(--subtle); font-size: .88rem; }
+.show-when { display: flex; gap: 8px; align-items: center; }
+.show-date { margin: 0; color: var(--subtle); font-weight: 600; font-size: .9rem; }
+.zone-label { margin: 6px 0 1px 34px; color: var(--subtle); font-size: .66rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.zone-label:first-child { margin-top: 0; }
+.picked { margin: 0 8px 0 0; color: var(--subtle); white-space: nowrap; }
+.picked strong { color: var(--ink); }
+main { max-width: 920px; margin: 0 auto; padding: 12px 20px 20px; }
 .show, .checkout { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.show { gap: 14px; }
 .screen-name { color: var(--brand); font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 4px; }
-h1 { font-size: clamp(1.7rem, 3.6vw, 2.3rem); line-height: 1.1; margin: 0; letter-spacing: -.01em; }
+h1 { font-size: clamp(1.5rem, 3vw, 1.95rem); line-height: 1.1; margin: 0; letter-spacing: -.01em; }
 h2 { font-size: 1.05rem; margin: 14px 0 4px; }
 .show-time { padding: 6px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); font-weight: 600; white-space: nowrap; }
 .legend { display: flex; flex-wrap: wrap; gap: 6px 18px; padding: 0; margin: 6px 0 8px; list-style: none; color: var(--subtle); }
@@ -47,7 +67,7 @@ h2 { font-size: 1.05rem; margin: 14px 0 4px; }
 
 .map-scroll {
   overflow-x: auto;
-  padding: 12px 8px 14px;
+  padding: 10px 8px 10px;
   border: 1px solid var(--line);
   border-radius: 14px;
   background: var(--surface);
@@ -75,7 +95,7 @@ h2 { font-size: 1.05rem; margin: 14px 0 4px; }
   align-items: center;
   gap: 1px;
   width: 38px;
-  height: 32px;
+  height: 29px;
   padding: 0;
   border: 1px solid #b9ad9b;
   border-radius: 7px 7px 4px 4px;
@@ -93,7 +113,7 @@ h2 { font-size: 1.05rem; margin: 14px 0 4px; }
 .seat:disabled span { color: #a69c8d; }
 .seat[aria-pressed="true"], .seat[aria-pressed="true"]:hover { color: #fff; background: var(--ink); border-color: var(--ink); }
 .seat[aria-pressed="true"] span { color: #fff; }
-.checkout { justify-content: flex-end; min-height: 56px; margin-top: 10px; }
+.checkout { justify-content: flex-end; min-height: 50px; margin-top: 8px; }
 #booking-status { margin-right: auto; color: var(--brand); font-weight: 600; }
 .total { white-space: nowrap; color: var(--subtle); }
 .total strong { color: var(--ink); font-size: 1.1rem; }
@@ -126,6 +146,7 @@ h2 { font-size: 1.05rem; margin: 14px 0 4px; }
 #summary-details { margin: 0; padding: 18px 24px; font-size: 1.25rem; font-weight: 700; }
 .ticket-foot { padding: 0 24px 22px; }
 
+@media (max-width: 1100px) { .nav { display: none; } }
 @media (max-width: 680px) {
   .masthead { padding-inline: 12px; white-space: normal; }
   main { padding-inline: 12px; }

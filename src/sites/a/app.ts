@@ -32,11 +32,21 @@ function mountMap(map: HTMLElement): void {
 
   const selection = () => seats.filter((seat) => selected.has(seat.id));
   const cost = (group: Seat[]) => group.reduce((sum, seat) => sum + seat.pricePaise, 0);
-  const updateTotal = () => { total.textContent = rupees(cost(selection())); };
+  const picked = document.querySelector<HTMLElement>("#selected-seats");
+  const updateTotal = () => {
+    total.textContent = rupees(cost(selection()));
+    if (picked) picked.textContent = selection().map(({ id }) => id).join(", ") || "None yet";
+  };
 
   let row: HTMLDivElement | undefined;
   let block: HTMLDivElement | undefined;
   for (const seat of seats) {
+    if (row?.dataset.zone !== seat.zone) {
+      const zone = document.createElement("div");
+      zone.className = "zone-label";
+      zone.textContent = `${seat.zone} · ${rupees(seat.pricePaise)}`;
+      map.append(zone);
+    }
     if (row?.dataset.row !== seat.row) {
       row = document.createElement("div");
       row.className = "row";
