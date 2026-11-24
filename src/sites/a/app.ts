@@ -176,7 +176,7 @@ function mountSummary(summary: HTMLElement): void {
   summary.dataset.holdId = hold.holdId;
   summary.dataset.seats = JSON.stringify(hold.seats);
   summary.dataset.totalPaise = String(hold.totalPaise);
-  document.querySelector("#summary-title")!.textContent = "Seats held";
+  document.querySelector("#summary-title")!.textContent = "Booking held";
   message.textContent = "Seats held. Demo: no payment is taken.";
   document.querySelector("#summary-details")!.textContent = `${hold.seats.join(", ")} · ${rupees(hold.totalPaise)} total`;
 }

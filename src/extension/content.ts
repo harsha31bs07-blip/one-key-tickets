@@ -35,6 +35,7 @@ interface Scene {
   afterIntro?: () => void;
   choose?: (option: ScanOption) => void;
   highlight?: (index: number) => void;
+  tone?: "alert";
 }
 
 function mount(adapter: SiteAdapter, initialSettings: Settings): void {
@@ -124,6 +125,7 @@ function mount(adapter: SiteAdapter, initialSettings: Settings): void {
     persist();
     await say(scanSpeech(option));
     if (version !== animation) return;
+    overlay.countdown(dwellFor(index, dwell));
     timer = setTimeout(() => {
       index = nextIndex(index, options.length);
       void scan();
@@ -135,7 +137,7 @@ function mount(adapter: SiteAdapter, initialSettings: Settings): void {
     halt();
     scene = next;
     index = 0;
-    overlay.show(current.result.mode, next.title, next.highlight ? [] : next.options ?? [], next.detail, next.reason);
+    overlay.show(current.result.mode, next.title, next.highlight ? [] : next.options ?? [], next.detail, next.reason, next.tone);
     renderCounters();
     persist();
     void scan();
@@ -286,6 +288,8 @@ function mount(adapter: SiteAdapter, initialSettings: Settings): void {
     showSeats(adapter, []);
     display({
       title: notice,
+      detail: "Your answers stay the same. Looking for the next option that keeps them.",
+      tone: "alert",
       intro: notice,
       noticeMs: Math.max(dwell, 600),
       afterIntro: () => current?.result.mode === "one-key" ? present() : generic(),

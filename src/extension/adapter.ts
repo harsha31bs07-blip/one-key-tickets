@@ -90,7 +90,7 @@ export function showSeats(adapter: SiteAdapter, seats: readonly Seat[]): void {
     if (!button) continue;
     button.dataset.oneKeyOffer = seat.role === "ordinary" ? seat.id :
       `${seat.id} ${seat.role === "companion" ? "companion" : roleLabels[seat.role]}`;
-    button.dataset.oneKeyBadge = String(index % 2);
+    button.dataset.oneKeyBadge = String(index + 1);
   }
 }
 
